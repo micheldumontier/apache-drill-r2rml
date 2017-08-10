@@ -1,0 +1,9 @@
+1. Run in Bash
+mkdir /mnt/c/data/pharmgkb && cd /mnt/c/data/pharmgkb && wget https://api.pharmgkb.org/v1/download/file/data/genes.zip https://api.pharmgkb.org/v1/download/file/data/rsid.zip https://api.pharmgkb.org/v1/download/file/data/drugs.zip https://api.pharmgkb.org/v1/download/file/data/phenotypes.zip https://api.pharmgkb.org/v1/download/file/data/pathways-biopax.zip https://api.pharmgkb.org/v1/download/file/data/pathways-tsv.zip https://api.pharmgkb.org/v1/download/file/data/dosingGuidelines.json.zip https://api.pharmgkb.org/v1/download/file/data/drugLabels.zip && find -name '*.zip' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;
+
+
+1. Run in CMD
+docker run -it -p 8047:8047 -p 31010:31010 --name drill -v /c/data/drill:/data -v /c/data/:/shared:ro  mkieboom/apache-drill-docker /drill-scripts/bootstrap.sh
+
+2. 
+Run r2rml.Main.java (add "drill.test_config" as argument)
