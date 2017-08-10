@@ -1,5 +1,5 @@
 1. Run in Bash
-mkdir /mnt/c/data/pharmgkb && cd /mnt/c/data/pharmgkb && wget https://api.pharmgkb.org/v1/download/file/data/genes.zip https://api.pharmgkb.org/v1/download/file/data/rsid.zip https://api.pharmgkb.org/v1/download/file/data/drugs.zip https://api.pharmgkb.org/v1/download/file/data/phenotypes.zip https://api.pharmgkb.org/v1/download/file/data/pathways-biopax.zip https://api.pharmgkb.org/v1/download/file/data/pathways-tsv.zip https://api.pharmgkb.org/v1/download/file/data/dosingGuidelines.json.zip https://api.pharmgkb.org/v1/download/file/data/drugLabels.zip && find -name '*.zip' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;
+mkdir -p /mnt/c/data/pharmgkb && cd /mnt/c/data/pharmgkb && wget -N https://api.pharmgkb.org/v1/download/file/data/genes.zip https://api.pharmgkb.org/v1/download/file/data/rsid.zip https://api.pharmgkb.org/v1/download/file/data/drugs.zip https://api.pharmgkb.org/v1/download/file/data/phenotypes.zip https://api.pharmgkb.org/v1/download/file/data/pathways-biopax.zip https://api.pharmgkb.org/v1/download/file/data/pathways-tsv.zip https://api.pharmgkb.org/v1/download/file/data/dosingGuidelines.json.zip https://api.pharmgkb.org/v1/download/file/data/drugLabels.zip && find -name '*.zip' -exec sh -c 'unzip -n -d "${1%.*}" "$1"' _ {} \;
 
 
 1. Run in CMD
